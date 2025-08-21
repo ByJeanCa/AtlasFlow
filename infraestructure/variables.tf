@@ -1,0 +1,18 @@
+variable "region" {
+  description = "The region where the resources will be deployed"
+  type = string
+}
+
+variable "my_ip" {
+  description = "Personal ip"
+  type = list(string) 
+}
+
+variable "common_tags" {
+  type = map(string)
+  default = {
+    Environment = "dev"
+    Owner = "Jeanca"
+    Terraform = "true"
+  }
+}
