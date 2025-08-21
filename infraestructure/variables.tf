@@ -16,3 +16,8 @@ variable "common_tags" {
     Terraform = "true"
   }
 }
+
+variable "amis" {
+  description = "List of amis available to use"
+  type = list(string)
+}
