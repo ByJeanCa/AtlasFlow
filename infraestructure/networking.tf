@@ -6,6 +6,7 @@ module "vpc" {
 
   private_subnets = ["10.0.1.0/26", "10.0.2.0/26"]
   public_subnets  = ["10.0.3.0/26", "10.0.4.0/26"]
+  azs             = [format("%s%s", var.region, "a"), format("%s%s", var.region, "b")]
 
   enable_nat_gateway = true
 
@@ -13,7 +14,7 @@ module "vpc" {
 }
 
 resource "aws_security_group" "sg-web-ssh-http-dev" {
-  name   = format("web-sg-ssh-http-%s", var.region)
+  name   = format("web-sgc-ssh-http-%s", var.region)
   vpc_id = module.vpc.vpc_id
 
   ingress {
