@@ -1,6 +1,6 @@
 module "vpc" {
-    source = format("terraform-aws-modules/vpc/aws", var.region)
-    name = "vpc-web-dev"
+    source = "terraform-aws-modules/vpc/aws"
+    name = format("vpc-web-dev", var.region)
 
     cidr = "10.0.0.0/24"
 
