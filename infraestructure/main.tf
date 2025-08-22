@@ -23,7 +23,7 @@ resource "aws_instance" "web-container-instance" {
 
   tags = merge(
     var.common_tags, {
-      Name = format("web-container-instance", var.region)
+      Name = format("web-container-instance-%s", var.region)
     }
   )
 }

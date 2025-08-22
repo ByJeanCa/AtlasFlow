@@ -4,8 +4,8 @@ module "vpc" {
 
   cidr = "10.0.0.0/24"
 
-  private_subnets = ["10.0.1.0/26", "10.0.2.0/26"]
-  public_subnets  = ["10.0.3.0/26", "10.0.4.0/26"]
+  private_subnets = ["10.0.0.0/26", "10.0.0.64/26"]
+  public_subnets  = ["10.0.0.128/26", "10.0.0.192/26"]
   azs             = [format("%s%s", var.region, "a"), format("%s%s", var.region, "b")]
 
   enable_nat_gateway = true
