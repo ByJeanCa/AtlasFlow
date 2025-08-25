@@ -3,3 +3,4 @@
   hosts: servers
   become: true
   roles:
+    - container_deploy

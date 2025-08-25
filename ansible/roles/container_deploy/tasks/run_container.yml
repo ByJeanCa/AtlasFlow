@@ -1,0 +1,9 @@
+---
+- name: Run app container
+  ansible.builtin.docker_container:
+    name: web_demo
+    image: "{{ image_repo }}:{{ image_tag }}"
+    state: started
+    restart_policy: always
+    ports: 
+      - "8080:80"
