@@ -6,4 +6,4 @@
     state: started
     restart_policy: always
     ports: 
-      - "8080:80"
+      - "{{ host_http_port }}:{{ container_http_port }}"

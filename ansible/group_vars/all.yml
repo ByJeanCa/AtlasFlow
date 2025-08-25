@@ -1,0 +1,8 @@
+---
+ansible_user: ubuntu
+
+image_repo: "byjeanca/nginx-web"
+image_tag: "v1"
+host_http_port: "8080"
+container_http_port: "80"
+container_name: "web_demo"
