@@ -1,0 +1,39 @@
+---
+- name: Update system packages
+  ansible.builtin.apt:
+    name: "*"
+    state: latest
+    update_cache: yes
+
+- name: Install required packages
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  loop:
+    - apt-transport-https 
+    - ca-certificates
+    - curl
+    - software-properties-common
+
+- name: Add the GPG key for the official Docker repository
+  ansible.builtin.apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Add the Docker repository to APT sources
+  ansible.builtin.apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
+    state: present
+
+- name: Install Docker
+  ansible.builtin.apt:
+    name: docker-ce
+    state: present
+    update_cache: yes
+
+- name: Ensure Docker servcie is running
+  ansible.builtin.service:
+    name: docker
+    state: started
+    enable: yes

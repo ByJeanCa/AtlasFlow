@@ -14,6 +14,8 @@ variable "common_tags" {
     Environment = "dev"
     Owner       = "Jeanca"
     Terraform   = "true"
+    Group = "servers"
+
   }
 }
 

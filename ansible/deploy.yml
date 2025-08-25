@@ -1,0 +1,6 @@
+---
+- name: Configure Docker and install the Nginx image with web.
+  hosts: servers
+  become: true
+  roles:
+    - container_deploy
