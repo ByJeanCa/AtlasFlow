@@ -31,3 +31,9 @@
     name: docker-ce
     state: present
     update_cache: yes
+
+- name: Ensure Docker servcie is running
+  ansible.builtin.service:
+    name: docker
+    state: started
+    enable: yes
