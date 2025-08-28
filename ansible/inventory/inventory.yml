@@ -7,7 +7,7 @@ filters:
 compose:
   ansible_host: public_ip_address
 hostnames:
-  tag:Name
+  - tag:Name
 keyed_groups:
   - key: tags.Group         
     prefix: ""
