@@ -3,7 +3,7 @@
 plugin: amazon.aws.aws_ec2
 regions: ["us-east-2"]
 filters:
-  tag:Terraform: "true"
+  "tag:Terraform": "true"
 compose:
   ansible_host: public_ip_address
 hostnames:
