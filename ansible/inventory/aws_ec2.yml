@@ -8,6 +8,5 @@ compose:
   ansible_host: public_ip_address
 hostnames:
   - tag:Name
-keyed_groups:
-  - key: tags.Group         
-    prefix: ""
+groups:
+  servers: "'servers' in tags.Group"
