@@ -7,3 +7,14 @@
     restart_policy: always
     ports: 
       - "{{ host_http_port }}:{{ container_http_port }}"
+
+- name: Healthcheck HTTP
+  ansible.builtin.uri:
+    url: "http://127.0.0.1/"
+    status_code: 200
+    return_content: yes
+  register: health
+  retries: 5
+  delay: 3
+  until: health.status == 200
+  become: true
