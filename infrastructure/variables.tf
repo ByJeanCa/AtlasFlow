@@ -24,7 +24,3 @@ variable "amis" {
   type        = list(string)
 }
 
-variable "tfprofile" {
-  description = "aws profile name"
-  type        = string
-}
